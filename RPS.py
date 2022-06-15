@@ -9,7 +9,7 @@ print("Winning Rules of the Rock paper scissor game as follows: \n"
 								+"paper vs scissor->scissor wins \n")
 
 while True:
-	print("Enter choice \n R for Rock, \n P for paper, and \n S for scissor \n")
+	print("Enter choice \n 1 for Rock, \n 2 for paper, and \n 3 for scissor \n")
 	
 	# take the input from user
 	choice = int(input("User turn: "))
@@ -19,17 +19,17 @@ while True:
 	# then it return True value
 	
 	# looping until user enter invalid input
-	while choice > S or choice < R:
+	while choice > 3 or choice < 1:
 		choice = int(input("enter valid input: "))
 		
 
 	# initialize value of choice_name variable
 	# corresponding to the choice value
-	if choice == R:
+	if choice == 1:
 		choice_name = 'Rock'
-	elif choice == P:
+	elif choice == 2:
 		choice_name = 'paper'
-	elif choice == S:
+	else:
 		choice_name = 'scissor'
 		
 	# print user choice
@@ -37,22 +37,22 @@ while True:
 	print("\nNow its computer turn.......")
 
 	# Computer chooses randomly any number
-	# among R , P and S. Using randint method
+	# among 1 , 2 and 3. Using randint method
 	# of random module
-	comp_choice = random.randint(R, S)
+	comp_choice = random.randint(1, 3)
 	
 	# looping until comp_choice value
 	# is equal to the choice value
 	while comp_choice == choice:
-		comp_choice = random.randint(R, S)
+		comp_choice = random.randint(1, 3)
 
 	# initialize value of comp_choice_name
 	# variable corresponding to the choice value
-	if comp_choice == R:
+	if comp_choice == 1:
 		comp_choice_name = 'Rock'
-	elif comp_choice == P:
+	elif comp_choice == 2:
 		comp_choice_name = 'paper'
-	elif comp_choice == S:
+	else:
 		comp_choice_name = 'scissor'
 		
 	print("Computer choice is: " + comp_choice_name)
@@ -64,13 +64,13 @@ while True:
 		result = Draw
 	
 	# condition for winning
-		if((choice == R and comp_choice == P) or
-		(choice == P and comp_choice ==R )):
+		if((choice == 1 and comp_choice == 2) or
+		(choice == 2 and comp_choice ==1 )):
 			print("paper wins => ", end = "")
 			result = "paper"
 
-		elif((choice == R and comp_choice == S) or
-			(choice == S and comp_choice == R)):
+		elif((choice == 1 and comp_choice == 3) or
+			(choice == 3 and comp_choice == 1)):
 			print("Rock wins =>", end = "")
 			result = "Rock"
 		else:
